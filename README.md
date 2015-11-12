@@ -17,3 +17,17 @@ There are four values on each line, which are as follows:
     - **E_Coli**:     The Amount of E-Coli that was found in the 100ml sample of water taken.
     - **Enterococci**:The Amount of Enterococci that was found in the 100ml sample of water taken.
     
+## List of E-Coli at a given beach
+To list the amount of E-Coli at a given beach using the GET method at the following URL:
+*http://beachSafetyAPI/[Beach]/eColi*
+where you replace [beach] with the requested beach.
+As an example, this URL:
+*http://beachSafetyAPI/Skerries/eColi*
+will return a number which represents the amount of E-Coli found in the tested sample
+The data will be returned in JSON format, with the following properties for each selected Beach:
+    - *E-Coli*: the Amount of the E-Coli found in the tested sample.
+    
+An example of a response would be:
+    ```json
+    [ {"E-Coli": 10}
+    ```
