@@ -113,7 +113,7 @@ where you replace [beach] with the requested beach
 The date has to be in the format *ddmmyyyy*
 As an example, this URL:
 ```
-http://beachSafetyAPI/Donabate
+http://beachSafetyAPI/Howth 
 ```
 will return an single JSON object of grouped data containing the name of the beach, the date that the beach was testedd on, the amount of E-Coli and the amount of Enterococci.
 The data will be returned in JSON format, with the following properties for each selected Beach:
