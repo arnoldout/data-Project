@@ -39,10 +39,8 @@ As an example, this URL:
 will return a number which represents the amount of E-Coli found in the tested sample
 The data will be returned in JSON format, with the following properties for each selected Beach:
     
-    Type  | Description 
-    ------------- | -------------
-     **Beach**| The requested Beach
-     **E-Coli**| the Amount of the E-Coli found in the tested sample.
+* Beach
+* E-Coli
     
 An example of a response would be:
 
@@ -52,6 +50,49 @@ JSON:
   {
     "Beach":"Balbriggan",
     "E_Coli":63
+  }
+]
+```
+
+## Which Beaches were tested on a given day
+To do a search by the date of test, sending a GET method at the following URL:
+*http://beachSafetyAPI/[date]*
+where you replace [date] with the date to search.
+The date has to be in the format *ddmmyyyy*
+As an example, this URL:
+*http://beachSafetyAPI/22052013*
+will return an array of grouped data containing the name of the beach, the amount of E-Coli and the amount of Enterococci.
+The data will be returned in JSON format, with the following properties for each selected Beach:
+    
+    
+* Beach
+* E-Coli
+* Enterococci
+    
+An example of a response would be:
+
+```
+JSON:
+[
+  {
+    "Beach":"Malahide",
+    "E_Coli":52,
+    "Enterococci":63
+  },
+  {
+    "Beach":"Portmarnock",
+    "E_Coli":10,
+    "Enterococci":1
+  },
+  {
+    "Beach":"Portrane - Burrow (The Brook)",
+    "E_Coli":10,
+    "Enterococci":1
+  },
+  {
+    "Beach":"Portrane - Tower Bay",
+    "E_Coli":10,
+    "Enterococci":1
   }
 ]
 ```
