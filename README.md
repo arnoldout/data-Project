@@ -32,10 +32,14 @@ Type  | Description
 
 ## Amount of E-Coli at a given beach
 To list the amount of E-Coli at a given beach using the GET method at the following URL:
-*http://beachSafetyAPI/[Beach]/eColi*
+```
+http://beachSafetyAPI/[Beach]/eColi
+```
 where you replace [beach] with the requested beach.
 As an example, this URL:
-*http://beachSafetyAPI/Skerries/eColi*
+```
+http://beachSafetyAPI/Skerries/eColi
+```
 will return a number which represents the amount of E-Coli found in the tested sample
 The data will be returned in JSON format, with the following properties for each selected Beach:
     
@@ -56,11 +60,15 @@ JSON:
 
 ## Which Beaches were tested on a given day
 To do a search by the date of test, sending a GET method at the following URL:
-*http://beachSafetyAPI/[date]*
+```
+http://beachSafetyAPI/[date]
+```
 where you replace [date] with the date to search.
 The date has to be in the format *ddmmyyyy*
 As an example, this URL:
-*http://beachSafetyAPI/22052013*
+```
+http://beachSafetyAPI/22052013
+```
 will return an array of grouped data containing the name of the beach, the amount of E-Coli and the amount of Enterococci.
 The data will be returned in JSON format, with the following properties for each selected Beach:
     
@@ -96,3 +104,37 @@ JSON:
   }
 ]
 ```
+## Find all information stored for a given beach
+To find all of the information that is stored for a certain beach, send a GET method at the following URL:
+```
+http://beachSafetyAPI/[beach]
+```
+where you replace [beach] with the requested beach
+The date has to be in the format *ddmmyyyy*
+As an example, this URL:
+```
+http://beachSafetyAPI/Donabate
+```
+will return an single JSON object of grouped data containing the name of the beach, the date that the beach was testedd on, the amount of E-Coli and the amount of Enterococci.
+The data will be returned in JSON format, with the following properties for each selected Beach:
+    
+    
+* Beach
+* Date
+* E-Coli
+* Enterococci
+    
+An example of a response would be:
+
+```
+JSON:
+[
+  {
+    "Beach":"Malahide",
+    "Date":"22/05/2013",
+    "E_Coli":52,
+    "Enterococci":63
+  }
+]
+```
+
